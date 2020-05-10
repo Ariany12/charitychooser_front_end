@@ -1,11 +1,18 @@
 <template>
-  <div class="posts-show">
-  <div v-bind:key="contact.id" v-for="contact in contacts">
-    <h1>id: {{ post.id }}</h1></p>
-    <h1>title: {{ post.title }}</h1>
-    <h1>body: {{ post.body }}</h1></p>
-    <h1>image: {{ post.image}}</h1></p>
-  </div>
+  <div class="charities-show">
+    <h1>{{ message }}</h1>
+    <h1>id: {{charity.id}}</h1>
+    <h1>charityName: {{charity.charityName}}</h1>
+    <h1>url : {{charity.url}}</h1>
+    <h1>donationUrl: {{charity.donationUrl}}</h1>
+    <h1>state: {{charity.state}}</h1>
+    <h1>city: {{charity.city}}</h1>
+    <h1>zipCode: {{charity.zipCode}}</h1>
+    <h1>score: {{charity.score}}</h1>
+    <h1>acceptingDonations: {{charity.acceptingDonations}}</h1>
+    <h1>category: {{charity.category}}</h1>
+    <h1>deductibilityCd: {{charity.deductibilityCd}}</h1>
+    <h1>missionStatement: {{charity.missionStatement}}</h1>
   </div>
 </template>
 
@@ -13,55 +20,22 @@
 </style>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 
 export default {
   data: function() {
     return {
-      message: "Welcome to the Show",
-      post: {}
+      message: "Welcome to the Show!",
+      charity: {}
     };
   },
   created: function() {
-    axios.get('/api/posts/' + this.$route.params.id).then(response => {
+    console.log(this.$route.params.id)
+    axios.get('/api/charities/' + this.$route.params.id).then(response => {
       console.log(response.data)
-      this.post = response.data
+      this.charity = response.data
     })
   },
   methods: {}
 };
 </script>
-create_table "charities", force: :cascade do |t|
-    t.string "charityName"
-    t.string "url"
-    t.string "donationUrl"
-    t.string "city"
-    t.string "state"
-    t.integer "zipCode"
-    t.integer "score"
-    t.string "acceptingDonations"
-    t.string "category"
-    t.string "deductibilityCd"
-    t.string "missionStatement"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "chosen_ones", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "charity_id"
-    t.integer "donated_amount"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
-  end
-
-end

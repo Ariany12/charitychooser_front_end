@@ -34,7 +34,7 @@ export default {
   created: function() {
     axios.get('/api/charities').then(response =>{
       console.log(response.data)
-      this.posts = response.data
+      this.charities = response.data
     })
   },
   methods: {}

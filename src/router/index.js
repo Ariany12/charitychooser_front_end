@@ -4,8 +4,8 @@ import Home from '../views/Home.vue'
 import Signup from "../views/Signup.vue"
 import Login from "../views/Login.vue"
 import Logout from "../views/Logout.vue"
-import CharitiesIndex from "../views/CharitiesIndex"
-import CharitiesShow from "../views/CharitiesShow"
+import CharitiesIndex from "../views/CharitiesIndex.vue"
+import CharitiesShow from "../views/CharitiesShow.vue"
 
 Vue.use(VueRouter)
 
@@ -36,7 +36,7 @@ Vue.use(VueRouter)
     component: CharitiesIndex
    },
    {
-    path: "/Charities/:id",
+    path: "/CharitiesShow/:id",
     name: "charities-show",
     component: CharitiesShow
    },

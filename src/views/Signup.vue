@@ -9,8 +9,12 @@
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
-          <label>Name:</label> 
-          <input type="text" class="form-control" v-model="name">
+          <label>First_name:</label> 
+          <input type="text" class="form-control" v-model="first_name">
+        </div>
+        <div class="form-group">
+          <label>Last_name:</label> 
+          <input type="text" class="form-control" v-model="last_name">
         </div>
         <div class="form-group">
           <label>Email:</label>
@@ -19,10 +23,6 @@
         <div class="form-group">
           <label>Password:</label>
           <input type="password" class="form-control" v-model="password">
-        </div>
-        <div class="form-group">
-          <label>Password confirmation:</label>
-          <input type="password" class="form-control" v-model="passwordConfirmation">
         </div>
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
@@ -36,20 +36,20 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      name: "",
+      first_name: "",
+      last_name: "",
       email: "",
       password: "",
-      passwordConfirmation: "",
       errors: []
     };
   },
   methods: {
     submit: function() {
       var params = {
-        name: this.name,
+        first_name: this.first_name,
+        last_name: this.last_name,
         email: this.email,
-        password: this.password,
-        password_confirmation: this.passwordConfirmation
+        password: this.password
       };
       axios
         .post("/api/users", params)

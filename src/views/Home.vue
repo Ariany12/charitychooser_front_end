@@ -1,27 +1,37 @@
 <template>
   <div>
-    <section id="Intro" class="main style1 dark fullscreen">
+  <header id="header">
+  <h1>Charity Chooser</h1>
+  <nav>
+    <ul>
+      <li><a href="intro">Charity</a></li>
+      <li><a href="one">What I do</a></li>
+      <li><a href="/charities">Chooser</a></li>
+      <li><a href="/chosen">Who is Receving</a></li>
+      <li><a href="/Signup">Signup</a></li>
+      <li><a href="/Login">Login</a></li>
+      <li><a href="/Logout">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+    <section id="intro" class="main style1 dark fullscreen">
   <div class="content">
     <header>
-      <h2>Hey.</h2>
+      <h2>Charity</h2>
     </header>
-    <p>Welcome to <strong>Big Picture</strong> a responsive site template designed by <a href="https://html5up.net">HTML5 UP</a><br />
-    and released for free under the <a href="https://html5up.net/license">Creative Commons Attribution license</a>.</p>
+    <p>A system of giving money, food, or help free to those who are in need because they are sick, poor, or have no home, or any organization that has the purpose of providing money or helping in this way <a href="https://html5up.net/license"></a>.</p>
     <footer>
       <a href="#one" class="button style2 down">More</a>
     </footer>
   </div>
 </section>
 
-<!-- One -->
 <section id="one" class="main style2 right dark fullscreen">
   <div class="content box style2">
     <header>
       <h2>What I Do</h2>
     </header>
-    <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-    Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-    id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+    <p>Charity Chooser allows you to choose from virtually every registered charity in the US, as well as other organizations such as community groups which have a recognised charitable purpose</p>
   </div>
   <a href="#two" class="button style2 down anchored">Next</a>
 </section>

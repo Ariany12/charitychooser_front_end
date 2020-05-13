@@ -1,19 +1,6 @@
 <template>
 <div id="app">
-<header id="header">
-  <h1>Charity Chooser</h1>
-  <nav>
-    <ul>
-      <li><a href="#Charity">Charity</a></li>
-      <li><a href="#WhatIdo">What I Do</a></li>
-      <li><a href="#Chooser">Chooser</a></li>
-      <li><a href="#Whoisreceiving">Who is receing</a></li>
-      <li><a href="#Signup">Signup</a></li>
-      <li><a href="#Login">Login</a></li>
-      <li><a href="#Logout">Logout</a></li>
-    </ul>
-  </nav>
-</header>
+
 <router-view/>
 
 <footer id="footer">

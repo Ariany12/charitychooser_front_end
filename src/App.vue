@@ -1,15 +1,35 @@
 <template>
 <div id="app">
-<div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/logout">Logout</router-link>|
-      <router-link to="/CharitiesIndex">CharitiesIndex</router-link>|
-      <router-link to="/CharitiesShow/">CharitiesShow</router-link>|
-</div>
+<header id="header">
+  <h1>Charity Chooser</h1>
+  <nav>
+    <ul>
+      <li><a href="#Charity">Charity</a></li>
+      <li><a href="#WhatIdo">What I Do</a></li>
+      <li><a href="#Chooser">Chooser</a></li>
+      <li><a href="#Whoisreceiving">Who is receing</a></li>
+      <li><a href="#Signup">Signup</a></li>
+      <li><a href="#Login">Login</a></li>
+      <li><a href="#Logout">Logout</a></li>
+    </ul>
+  </nav>
+</header>
 <router-view/>
+
+<footer id="footer">
+
+  <!-- Icons -->
+    <ul class="icons">
+      <li><a href="#" <i class="fas fa-cogs"></i> OrgHunter</span></a></li>  
+    </ul>
+
+  <!-- Menu -->
+    <ul class="menu">
+      <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+    </ul>
+
+</footer>
+
 </div>
 </template>
 

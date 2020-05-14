@@ -9,11 +9,11 @@
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
-          <label>First_name:</label> 
+          <label>First name:</label> 
           <input type="text" class="form-control" v-model="first_name">
         </div>
         <div class="form-group">
-          <label>Last_name:</label> 
+          <label>Last name:</label> 
           <input type="text" class="form-control" v-model="last_name">
         </div>
         <div class="form-group">

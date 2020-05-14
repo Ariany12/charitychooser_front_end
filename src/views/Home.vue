@@ -1,6 +1,6 @@
 <template>
   <div>
-  <header id="header">
+  <!-- <header id="header">
   <h1>Charity Chooser</h1>
   <nav>
     <ul>
@@ -13,7 +13,7 @@
       <li><a href="/Logout">Logout</a></li>
     </ul>
   </nav>
-</header>
+</header> -->
     <section id="intro" class="main style1 dark fullscreen">
   <div class="content">
     <header>

@@ -2,6 +2,7 @@
   <div class="charities - index">
     <h1>{{ message }}</h1>
     <div v-bind:key="charity.id" v-for="charity in charities">
+    <!-- <div v-for="charity in filterBy(charities, $parent.charityNameFilter, 'charityName')"> -->
     <p>id: {{charity.id}}</p>
     <p>charityName: <a v-bind:href="`/posts/${charity.charityName}`">{{ charity.charityName}}</a></p>
     <p>url : {{charity.url}}</p>
@@ -17,6 +18,7 @@
     <hr>
     </div>
   </div>
+  </div>
 </template>
 
 <style>
@@ -24,11 +26,16 @@
 
 <script>
 import axios from "axios";
+// import Vue2Filters from "vue2-filters"; 
+
+
 export default {
+  // mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       message: "All Charities",
       charities: []
+      // charityNameFilter: ''
     };
   },
   created: function() {

@@ -42,7 +42,7 @@ export default {
 
   data: function() {
     return {
-      message: "Charities",
+      message: "Chooser",
       charities: [],
       name: "",
       state: "",
@@ -68,8 +68,8 @@ export default {
       };
       axios.get(`/api/charities?name=${this.name}&state=${this.state}&city=${this.city}&zipcode=${this.zipcode}&score=${this.score}&deductibility=${this.deductibility}`).then(response => {
         console.log(response.data);
-        this.charities = response.data
-        //  this.$router.push("/CharitiesShow")
+         this.$router.push("/charities-show")
+         this.charities = response.data 
         
       });
     }

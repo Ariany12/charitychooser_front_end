@@ -1,6 +1,6 @@
 <template>
   <div>
-  <!-- <header id="header">
+  <header id="header">
   <h1>Charity Chooser</h1>
   <nav>
     <ul>
@@ -8,12 +8,11 @@
       <li><a href="one">What I do</a></li>
       <li><a href="/charities">Chooser</a></li>
       <li><a href="/chosen">Who is Receving</a></li>
-      <li><a href="/Signup">Signup</a></li>
       <li><a href="/Login">Login</a></li>
       <li><a href="/Logout">Logout</a></li>
     </ul>
   </nav>
-</header> -->
+</header>
     <section id="intro" class="main style1 dark fullscreen">
   <div class="content">
     <header>
@@ -36,27 +35,10 @@
   <a href="#two" class="button style2 down anchored">Next</a>
 </section>
 
-<!-- Two -->
-<section id="two" class="main style2 left dark fullscreen">
-  <div class="content box style2">
-    <header>
-      <h2>Who I Am</h2>
-    </header>
-    <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-    Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-    id varius justo euismod in. Curabitur egestas consectetur magna.</p>
-  </div>
-  <a href="#work" class="button style2 down anchored">Next</a>
-</section>
-
 <!-- Work -->
 <section id="work" class="main style3 primary">
   <div class="content">
     <header>
-      <h2>My Work</h2>
-      <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-      Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-      arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
     </header>
 
     <!-- Gallery  -->
@@ -85,43 +67,76 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="main style3 secondary">
+  <div class="signup">
   <div class="content">
     <header>
-      <h2>Say Hello.</h2>
-      <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+      <h2> Let's Help</h2>
+      <h3>Signup</h3>
     </header>
-    <div class="box">
-      <form method="post" action="#">
-        <div class="fields">
-          <div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-          <div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-          <div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-        </div>
-        <ul class="actions special">
-          <li><input type="submit" value="Send Message" /></li>
+     <form v-on:submit.prevent="submit()">
+        <ul>
+          <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
-      </form>
+        <div class="box">
+          <label>First name:</label> 
+          <input type="text" class="form-control " v-model="first_name">
+        </div>
+        <div class="box">
+          <label>Last name:</label> 
+          <input type="text" class="form-control" v-model="last_name">
+        </div>
+        <div class="box">
+          <label>Email:</label>
+          <input type="email" class="form-control" v-model="email">
+        </div>
+        <div class="box">
+          <label>Password:</label>
+          <input type="password" class="form-control" v-model="password">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+          <p> If you already have an account with the service provider, select Sign in with existing account.</p>
+       </form>
+     </div>
+     </div>
     </div>
-  </div>
-</section>
-  </div>
 </template>
 
 <style>
+
+
 </style>
 
 <script>
+import axios from "axios";
+
 export default {
   data: function() {
     return {
-     
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      errors: []
     };
   },
-  created: function() {},
-  methods: {}
+  methods: {
+    submit: function() {
+      var params = {
+        first_name: this.first_name,
+        last_name: this.last_name,
+        email: this.email,
+        password: this.password
+      };
+      axios
+        .post("/api/users", params)
+        .then(response => {
+          this.$router.push("/login");
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
+        });
+    }
+  }
 };
 </script>
-
-
 

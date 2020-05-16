@@ -42,7 +42,7 @@ Vue.use(VueRouter)
     component: ChosenIndex
    },
    {
-    path: "/charities/:id",
+    path: "/charities-show",
     name: "charities-show",
     component: CharitiesShow
    },

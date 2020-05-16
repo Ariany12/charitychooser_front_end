@@ -8,15 +8,15 @@
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
-        <div class="form-group">
+        <div class="fields">
           <label>First name:</label> 
           <input type="text" class="form-control" v-model="first_name">
         </div>
-        <div class="form-group">
+        <div class="field half">
           <label>Last name:</label> 
           <input type="text" class="form-control" v-model="last_name">
         </div>
-        <div class="form-group">
+        <div class="field">
           <label>Email:</label>
           <input type="email" class="form-control" v-model="email">
         </div>

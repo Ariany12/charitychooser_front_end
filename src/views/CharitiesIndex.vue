@@ -1,8 +1,16 @@
 <template>
   <div class="charities - index">
     <h1>{{ message }}</h1>
+    Charity name: <input type="text" v-model="name">
+    State: <input type="text" v-model="state">
+    City: <input type="text" v-model="city">
+    Zipcode: <input type="text" v-model="zipcode">
+    Score: <input type="text" v-model="score">
+    Deductibility : <input type="text" v-model="deductibility">
+   <p><button v-on:click="Search()">charity_chooser</button></p>
+
+    
     <div v-bind:key="charity.id" v-for="charity in charities">
-    <!-- <div v-for="charity in filterBy(charities, $parent.charityNameFilter, 'charityName')"> -->
     <p>id: {{charity.id}}</p>
     <p>charityName: <a v-bind:href="`/posts/${charity.charityName}`">{{ charity.charityName}}</a></p>
     <p>url : {{charity.url}}</p>
@@ -17,34 +25,55 @@
     <p>missionStatement: {{charity.missionStatement}}</p>
     <hr>
     </div>
-  </div>
-  </div>
+
+</div>
 </template>
 
 <style>
+
+
 </style>
 
 <script>
-import axios from "axios";
-// import Vue2Filters from "vue2-filters"; 
+import axios from "axios"; 
 
 
 export default {
-  // mixins: [Vue2Filters.mixin],
+
   data: function() {
     return {
-      message: "All Charities",
-      charities: []
-      // charityNameFilter: ''
+      message: "Charities",
+      charities: [],
+      name: "",
+      state: "",
+      city: "",
+      zipcode: "",
+      score: "",
+      deductibility: "",
+      search: "",
+      errors: []
     };
   },
-  created: function() {
-    axios.get('/api/charities').then(response =>{
-      console.log(response.data)
-      this.charities = response.data
-    })
-  },
-  methods: {}
+
+  methods: {
+    Search: function(){
+      console.log(this.name)
+      var params = {
+        charity_name: this.name,
+        state: this.state,
+        city: this.city,
+        zipcode: this.zipcode,
+        score: this.score,
+        deductibility: this.deductibility
+      };
+      axios.get(`/api/charities?name=${this.name}&state=${this.state}&city=${this.city}&zipcode=${this.zipcode}&score=${this.score}&deductibility=${this.deductibility}`).then(response => {
+        console.log(response.data);
+        this.charities = response.data
+        //  this.$router.push("/CharitiesShow")
+        
+      });
+    }
+  } 
 };
 </script>
 

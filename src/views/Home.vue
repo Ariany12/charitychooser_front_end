@@ -13,7 +13,7 @@
     </ul>
   </nav>
 </header>
-    <section id="intro" class="main style1 dark fullscreen">
+    <section id="intro" class="main style1 dark fullscreen"> 
   <div class="content">
     <header>
       <h2>Charity</h2>
@@ -32,7 +32,7 @@
     </header>
     <p>Charity Chooser allows you to choose from virtually every registered charity in the US, as well as other organizations such as community groups which have a recognised charitable purpose</p>
   </div>
-  <a href="#two" class="button style2 down anchored">Next</a>
+  <a href="#work" class="button style2 down anchored">Next</a>
 </section>
 
 <!-- Work -->

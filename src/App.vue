@@ -6,7 +6,7 @@
   <h1>Charity Chooser</h1>
   <nav>
     <ul>
-      <li><a href="localhost:8080">Charity</a></li>
+      <li><a href="intro">Charity</a></li>
       <li><a href="one">What I do</a></li>
       <li><a href="/charities">Chooser</a></li>
       <li><a href="/chosen">Who is Receving</a></li>
@@ -42,9 +42,8 @@
 
   <!-- Icons -->
     <ul class="icons">
-      <li><a href="#" <i class="fas fa-cogs"></i> OrgHunter</span></a></li>  
+      <li><a href="http://charityapi.orghunter.com/" <i class="fas fa-cogs"></i> OrgHunter</span></a></li>  
     </ul>
-
   <!-- Menu -->
     <ul class="menu">
       <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>

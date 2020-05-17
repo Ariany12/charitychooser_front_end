@@ -1,15 +1,15 @@
 <template>
   <div class="charities-index">
     <div v-bind:key="charity.id" v-for="charity in charities">
-    <h1>Charity name: {{charity.name}}</h1>
-    <h1>Url : {{charity.url}}</h1>
-    <h1>Donation Url: {{charity.donation_url}}</h1>
-    <h1>State: {{charity.state}}</h1>
-    <h1>City: {{charity.city}}</h1>
-    <h1>Zip code: {{charity.zipcode}}</h1>
-    <h1>Score: {{charity.score}}</h1>
-    <h1>Category: {{charity.category}}</h1>
-    <h1>Deductibility: {{charity.deductibility}}</h1>
+    <h1>Charity name: {{charity.charity_name}}</h1>
+    <h1>url : {{charity.url}}</h1>
+    <h1>donation Url: {{charity.donation_url}}</h1>
+    <h1>state: {{charity.state}}</h1>
+    <h1>city: {{charity.city}}</h1>
+    <h1>zip code: {{charity.zip_code}}</h1>
+    <h1>score: {{charity.score}}</h1>
+    <h1>category: {{charity.category}}</h1>
+    <h1>deductibility: {{charity.deductibility}}</h1>
     <h1>Mission Statement: {{charity.mission_statement}}</h1>
     <hr>
   </div>

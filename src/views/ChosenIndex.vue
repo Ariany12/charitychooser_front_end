@@ -4,8 +4,8 @@
     <div v-bind:key="chosen.id" v-for="chosen in chosens">
     <p>id: {{chosen.id}}</p>
     <!-- <p>charityName: <a v-bind:href="`/posts/${charity.charityName}`">{{ charity.charityName}}</a></p> -->
-    <p>user_id : {{chosen.user_id}}</p>
-    <p>charity_id: {{chosen.charity_id}}</p>
+    <p>user_name : {{chosen.user_name}}</p>
+    <p>charity_name: {{chosen.charity_name}}</p>
     <p>donated_amount: {{chosen.donated_amount}}</p>    
     <hr>
     </div>

@@ -1,20 +1,17 @@
 <template>
   <div class="charities-index">
     <div v-bind:key="charity.id" v-for="charity in charities">
-    <h1>{{ message }}</h1>
-    <h1>{{ charity }}</h1>
-    <h1>id: {{charity.id}}</h1>
-    <h1>charityName: {{charity.charity_name}}</h1>
-    <h1>url : {{charity.url}}</h1>
-    <h1>donationUrl: {{charity.donation_url}}</h1>
-    <h1>state: {{charity.state}}</h1>
-    <h1>city: {{charity.city}}</h1>
-    <h1>zipCode: {{charity.zip_code}}</h1>
-    <h1>score: {{charity.score}}</h1>
-    <h1>acceptingDonations: {{charity.accepting_donations}}</h1>
-    <h1>category: {{charity.category}}</h1>
-    <h1>deductibilityCd: {{charity.deductibility}}</h1>
-    <h1>missionStatement: {{charity.mission_statement}}</h1>
+    <h1>Charity name: {{charity.name}}</h1>
+    <h1>Url : {{charity.url}}</h1>
+    <h1>Donation Url: {{charity.donation_url}}</h1>
+    <h1>State: {{charity.state}}</h1>
+    <h1>City: {{charity.city}}</h1>
+    <h1>Zip code: {{charity.zipcode}}</h1>
+    <h1>Score: {{charity.score}}</h1>
+    <h1>Category: {{charity.category}}</h1>
+    <h1>Deductibility: {{charity.deductibility}}</h1>
+    <h1>Mission Statement: {{charity.mission_statement}}</h1>
+    <hr>
   </div>
   </div>
 </template>
@@ -24,18 +21,19 @@
 
 <script>
 import axios from "axios";
-// import axios from "..../CharitiesIndex..vue"
 
 export default {
   data: function() {
     return {
       message: "Welcome to the Show!",
-      charities: []
+      charities: [],
+      query: {}
     };
   },
+
   created: function() {
-    console.log(this.charities)
-    axios.get(`/api/charities?name=${this.name}&state=${this.state}&city=${this.city}&zipcode=${this.zipcode}&score=${this.score}&deductibility=${this.deductibility}`).then(response => {
+     console.log(this.$route.query.state)
+    axios.get(`/api/charities?name=${this.$route.query.name}&state=${this.$route.query.state}&city=${this.$route.query.city}&zipcode=${this.$route.query.zipcode}&score=${this.$route.query.score}&deductibility=${this.$route.query.deductibility}`).then(response => {
       console.log(response.data)
       this.charities = response.data
     })

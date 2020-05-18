@@ -5,8 +5,9 @@ import Signup from "../views/Signup.vue"
 import Login from "../views/Login.vue"
 import Logout from "../views/Logout.vue"
 import CharitiesIndex from "../views/CharitiesIndex.vue"
-import ChosenIndex from "../views/ChosenIndex.vue"
 import CharitiesShow from "../views/CharitiesShow.vue"
+import ChosenIndex from "../views/ChosenIndex.vue"
+import ChosenNew from "../views/ChosenNew.vue"
 
 Vue.use(VueRouter)
 
@@ -37,16 +38,21 @@ Vue.use(VueRouter)
     component: CharitiesIndex
    },
    {
-    path: "/chosen",
-    name: "chosen-index",
-    component: ChosenIndex
-   },
-   {
-    path: "/charities-show",
-    name: "charities-show",
-    component: CharitiesShow
-   },
-  {
+     path: "/charities/:id",
+     name: "charities-show",
+     component: CharitiesShow
+    },
+    {
+     path: "/chosen",
+     name: "chosens-index",
+     component: ChosenIndex
+    },
+    {
+    path: "/chosen/new",
+    name: "chosen-new",
+    component: ChosenNew
+    },
+    {
     path: '/about',
     name: 'About',
     // route level code-splitting

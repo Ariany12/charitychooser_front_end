@@ -41,3 +41,20 @@ export default {
   methods: {}
 };
 </script>
+
+// post("/api/users", params)
+//         .then(response => {
+//           this.$router.push("/login");
+//         })
+
+
+
+* button to redirect for the added who you donated from chooser(show).... 
+* links title to acess the charity website
+* make (1/0 to yes or no deductible)
+* make the forms better
+* limit for page
+* numeration under the page
+* runs my db
+* charity and what i do links works
+

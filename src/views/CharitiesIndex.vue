@@ -1,11 +1,11 @@
 <template>
   <div class="charities - index">
-    Charity name: <input type="text" v-model="name">
-    State: <input type="text" v-model="state">
-    City: <input type="text" v-model="city">
-    Zipcode: <input type="text" v-model="zipcode">
-    Score: <input type="text" v-model="score">
-    Deductibility : <input type="text" v-model="deductibility">
+    Charity name <input type="text" v-model="name">
+    State <input type="text" v-model="state">
+    City <input type="text" v-model="city">
+    Zipcode <input type="text" v-model="zipcode">
+    Score <input type="text" v-model="score">
+    Deductibility  <input type="text" v-model="deductibility">
    <p><button v-on:click="Search()">charity_chooser</button></p>
   </div>
 </template>
@@ -54,5 +54,5 @@ export default {
     }
   } 
 };
-</script><!-- Work -->
+</script>
 

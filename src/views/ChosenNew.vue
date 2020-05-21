@@ -1,27 +1,27 @@
 <template>
-  <div class="posts-new">
+  <div class="chosen-new">
     <div class="container">      
       <form v-on:submit.prevent="submit()">
-        <h1>Pleasw, I added info about the charity donated !!!</h1>
+        <h1>You just donated Great!! please let us know for which Charity</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
-          <label>Charity name:</label> 
+          <label>Charity name</label> 
           <input type="text" class="form-control" v-model="charity_name">
         </div>
         <div class="form-group">
-          <label>State:</label>
+          <label>Charity State</label>
           <input type="text" class="form-control" v-model="state">
         </div>
         <div class="form-group">
-          <label>User name:</label>
+          <label> Your full name</label>
           <input type="text" class="form-control" v-model="user_name">
         </div>
       
         <div class="form-group">
-          <label>Amount donated :</label>
-          <input type="text" class="form-control" v-model="amount_donated">
+          <label>Amount donated </label>
+          <input type="text" class="form-control" v-model="donated_amount">
         </div>
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
@@ -34,29 +34,31 @@
 import axios from "axios";
 
 export default {
-  data: function(){
+  data: function() {
     return {
       charity_name: "",
       state: "",
       user_name: "",
-      amount_donated: "",
+      donated_amount: "",
       errors: []
+    
 
     };
   },
 
   methods:{
-    submit: function(){
+      submit: function() {
       var params = {
-        name: this.name,
+        name: this.charity_name,
         state: this.state,
         user_name: this.user_name,
-        amount_donated: this.amount_donated,
+        donated_amount: this.donated_amount
       };
-      axios
-      .post("/api/chosen", params)
+
+      axios.post("/api/chosen", params)
       .then(response => {
         this.$router.push("/chosen");
+        // console.log (response.data)
       
         })
         .catch(error => {

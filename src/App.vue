@@ -9,6 +9,7 @@
       <li><a href="intro">Charity</a></li>
       <li><a href="one">What I do</a></li>
       <li><a href="/charities">Chooser</a></li>
+       <li><a href="/chosen/new">Donor</a></li>
       <li><a href="/chosen">Who is Receving</a></li>
       <!-- <li><a href="/Signup">Signup</a></li> -->
       <li><a href="/Login">Login</a></li>

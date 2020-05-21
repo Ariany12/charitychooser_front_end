@@ -41,25 +41,26 @@
     <header>
     </header>
 
+
     <!-- Gallery  -->
       <div class="gallery">
         <article class="from-left">
-          <a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+          <a href="images/fulls/01.jpg" class="image fit"><img height="250px" src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
         </article>
         <article class="from-right">
-          <a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
+          <a href="images/fulls/02.jpg" class="image fit"><img height="250px" src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
         </article>
         <article class="from-left">
-          <a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
+          <a href="images/fulls/03.jpg" class="image fit"><img height="250px" src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
         </article>
         <article class="from-right">
-          <a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
+          <a href="images/fulls/04.jpg" class="image fit"><img height="250px" src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
         </article>
         <article class="from-left">
-          <a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
+          <a href="images/fulls/05.jpg" class="image fit"><img height="250px" src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
         </article>
         <article class="from-right">
-          <a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
+          <a href="images/fulls/06.jpg" class="image fit"><img height="250px" src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
         </article>
       </div>
 
@@ -70,43 +71,46 @@
   <div class="signup">
   <div class="content">
     <header>
-      <h2> Let's Help</h2>
-      <h3>Signup</h3>
+      <h2>  Join us, help others </h2>
     </header>
      <form v-on:submit.prevent="submit()">
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="box">
-          <label>First name:</label> 
+          <label>First name</label> 
           <input type="text" class="form-control " v-model="first_name">
         </div>
         <div class="box">
-          <label>Last name:</label> 
+          <label>Last name</label> 
           <input type="text" class="form-control" v-model="last_name">
         </div>
         <div class="box">
-          <label>Email:</label>
+          <label>Email</label>
           <input type="email" class="form-control" v-model="email">
         </div>
         <div class="box">
-          <label>Password:</label>
+          <label>Password</label>
           <input type="password" class="form-control" v-model="password">
         </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
-          <p> If you already have an account with the service provider, select Sign in with existing account.</p>
+        <input type="submit" class="btn btn-primary" value="Signup">
+          <p> If you already have an account with the service provider, select login with existing account.</p>
        </form>
      </div>
      </div>
     </div>
 </template>
 
+
 <style>
 
-
+/* p {
+  text-align: right;
+} */
 </style>
 
 <script>
+
 import axios from "axios";
 
 export default {

@@ -1,18 +1,19 @@
 <template>
   <div class="chosen - index">
-    <h1>{{ message }}</h1>
     <div v-bind:key="chosen.id" v-for="chosen in chosens">
-    <p>id: {{chosen.id}}</p>
+    <!-- <p>id: {{chosen.id}}</p> -->
     <!-- <p>charityName: <a v-bind:href="`/posts/${charity.charityName}`">{{ charity.charityName}}</a></p> -->
-    <p>user_name : {{chosen.user_name}}</p>
-    <p>charity_name: {{chosen.charity_name}}</p>
-    <p>donated_amount: {{chosen.donated_amount}}</p>    
+    <p>Donor name : {{chosen.user_name}}</p>
+    <p>Charity name: {{chosen.charity_name}}</p>
+    <p>Charity state: {{chosen.state}}</p>
+    <p>Donated amount: {{chosen.donated_amount}}</p>    
     <hr>
     </div>
   </div>
 </template>
 
 <style>
+
 </style>
 
 <script>
@@ -20,14 +21,14 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Who is receiving",
       chosens: []
     };
   },
   created: function() {
-    axios.get('/api/chosenones').then(response =>{
+    axios.get('/api/chosen').then(response =>{
       console.log(response.data)
       this.chosens = response.data
+      
     })
   },
   methods: {}

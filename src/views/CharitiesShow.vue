@@ -1,16 +1,21 @@
 <template>
   <div class="charities-index">
     <div v-bind:key="charity.id" v-for="charity in charities">
-    <h1>Charity name: {{charity.charity_name}}</h1>
-    <h1>url : {{charity.url}}</h1>
-    <h1>donation Url: {{charity.donation_url}}</h1>
-    <h1>state: {{charity.state}}</h1>
-    <h1>city: {{charity.city}}</h1>
-    <h1>zip code: {{charity.zip_code}}</h1>
-    <h1>score: {{charity.score}}</h1>
-    <h1>category: {{charity.category}}</h1>
-    <h1>deductibility: {{charity.deductibility}}</h1>
-    <h1>Mission Statement: {{charity.mission_statement}}</h1>
+    <h1> {{charity.charity_name}}</h1>
+     <a :href="charity.url">
+    {{ charity.url}}
+    </a>
+    <p>
+     <a :href="charity.donation_url">
+    {{ charity.donation_url}}
+    </a>
+    <h1>State: {{charity.state}}</h1>
+    <h1>City: {{charity.city}}</h1>
+    <h1>Zip code: {{charity.zip_code}}</h1>
+    <h1>Score: {{charity.score}}</h1>
+    <h1>Category: {{charity.category}}</h1>
+    <h1>Deductibility: {{charity.deductibility}}</h1>
+    <!-- <h1>Mission Statement: {{charity.mission_statement}}</h1> -->
     <hr>
   </div>
   </div>
@@ -25,7 +30,6 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Welcome to the Show!",
       charities: [],
       query: {}
     };
@@ -41,20 +45,3 @@ export default {
   methods: {}
 };
 </script>
-
-// post("/api/users", params)
-//         .then(response => {
-//           this.$router.push("/login");
-//         })
-
-
-
-* button to redirect for the added who you donated from chooser(show).... 
-* links title to acess the charity website
-* make (1/0 to yes or no deductible)
-* make the forms better
-* limit for page
-* numeration under the page
-* runs my db
-* charity and what i do links works
-

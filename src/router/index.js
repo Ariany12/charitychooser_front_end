@@ -38,7 +38,7 @@ Vue.use(VueRouter)
     component: CharitiesIndex
    },
    {
-     path: "/charities/:id",
+     path: "/charities-show",
      name: "charities-show",
      component: CharitiesShow
     },
